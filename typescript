@@ -1,0 +1,528 @@
+Script started on 2025-02-06 05:13:50+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="159" LINES="11"]
+[0;32m@Lightister [0m➜ [1;34m/workspaces/csci-330-homeworks-Lightister [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (NOT (EQUAL 3 (ABS 3)))
+
+NIL
+* (/ 2 (+ 8 12))
+
+1/10
+* (/ (+ 8 12) 2)
+
+10
+* ( + (* 3 3) ( * 4 4))
+
+25
+* (MILES-PER-Gallon (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+)
+; in:
+;      MILES-PER-GALLON (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING
+;                    GALLONS-CONSUMED)
+;     (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+; 
+; caught WARNING:
+;   undefined variable: FINAL-ODOMETER-READING
+; 
+; caught WARNING:
+;   undefined variable: GALLONS-CONSUMED
+; 
+; caught STYLE-WARNING:
+;   undefined function: INITIAL-ODOMETER-READING
+
+;     (MILES-PER-GALLON
+;      (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED))
+; 
+; caught STYLE-WARNING:
+;   undefined function: MILES-PER-GALLON
+; 
+; compilation unit finished
+;   Undefined functions:
+;     INITIAL-ODOMETER-READING MILES-PER-GALLON
+;   Undefined variables:
+;     FINAL-ODOMETER-READING GALLONS-CONSUMED
+;   caught 2 WARNING conditions
+;   caught 2 STYLE-WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable FINAL-ODOMETER-READING is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+0] 0
+
+* (MILES-PER-Gallon (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+	( / GALLONS-CONSUMED ( - FINAL-ODOMETER-READING INITIAL-ODOMETER-READING))
+
+)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable FINAL-ODOMETER-READING is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV FINAL-ODOMETER-READING #<NULL-LEXENV>)
+0] 0
+
+*  (list ’cons t nil)
+ (eval (list ’cons t nil))
+ (e
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ’CONS is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ’CONS #<NULL-LEXENV>)
+0] val (eval (list ’cons t nil)))
+ (apply #’cons ’(t ; in: LIST ’CONS
+;     (LIST ’CONS T NIL)
+; 
+; caught WARNING:
+;   undefined variable: ’CONS
+; 
+; compilation unit finished
+;   Undefined variable:
+;     ’CONS
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ’CONS is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G389)) #<unused argument>)
+   source: (LIST ’CONS T NIL)
+0[2] nil))
+ (eval nil)
+ (list ’eval nil)
+ (eval (list ’
+
+debugger invoked on a SB-INT:SIMPLE-READER-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  no dispatch function defined for #\RIGHT_SINGLE_QUOTATION_MARK
+
+    Stream: #<SYNONYM-STREAM :SYMBOL *TERMINAL-IO* {910F349}>
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+(SB-IMPL::READ-MAYBE-NOTHING #<SYNONYM-STREAM :SYMBOL *TERMINAL-IO* {910F349}> #\#)
+0[3] eval nil))
+; in: LIST ’CONS
+;     (LIST ’EVAL NIL)
+; 
+; caught WARNING:
+;   undefined variable: ’EVAL
+; 
+; compilation unit finished
+;   Undefined variable:
+;     ’EVAL
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ’EVAL is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G390)) #<unused argument>)
+   source: (LIST ’EVAL NIL)
+0[4] ^C
+
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Reduce debugger level (to debug level 4).
+  2:            Reduce debugger level (to debug level 3).
+  3:            Reduce debugger level (to debug level 2).
+  4:            Reduce debugger level (to debug level 1).
+  5:            Exit debugger, returning to top level.
+
+("bogus stack frame")
+0[5] 0
+0
+
+0[3] 0
+
+0[2] 0
+
+0] 0
+
+* 0 (defun MILES-PER-Gallon (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+)
+; in: DEFUN MILES-PER-GALLON
+;     (SB-INT:NAMED-LAMBDA MILES-PER-GALLON
+;         (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+;       (BLOCK MILES-PER-GALLON))
+; 
+; caught STYLE-WARNING:
+;   (The function was previously called with one argument, but wants at least three.)
+; 
+; caught STYLE-WARNING:
+;   The variable INITIAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FINAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable GALLONS-CONSUMED is defined but never used.
+; 
+; compilation unit finished
+;   caught 4 STYLE-WARNING conditions
+
+MILES-PER-GALLON
+* (defun MILES-PER-Gallon (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED))
+	( / ( -; in: DEFUN MILES-PER-GALLON
+;     (SB-INT:NAMED-LAMBDA MILES-PER-GALLON
+;         (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+;       (BLOCK MILES-PER-GALLON))
+; 
+; caught STYLE-WARNING:
+;   The variable INITIAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FINAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable GALLONS-CONSUMED is defined but never used.
+; 
+; compilation unit finished
+;   caught 3 STYLE-WARNING conditions
+WARNING: redefining COMMON-LISP-USER::MILES-PER-GALLON in DEFUN
+
+MILES-PER-GALLON
+*  FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED)
+	(miles-per-gallon 10 20 5)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable FINAL-ODOMETER-READING is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV FINAL-ODOMETER-READING #<NULL-LEXENV>)
+0] 0
+
+* 0 (defun MILES-PER-Gallon (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED))
+	( / ( -; in: DEFUN MILES-PER-GALLON
+;     (SB-INT:NAMED-LAMBDA MILES-PER-GALLON
+;         (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)
+;       (BLOCK MILES-PER-GALLON))
+; 
+; caught STYLE-WARNING:
+;   The variable INITIAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FINAL-ODOMETER-READING is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable GALLONS-CONSUMED is defined but never used.
+; 
+; compilation unit finished
+;   caught 3 STYLE-WARNING conditions
+WARNING: redefining COMMON-LISP-USER::MILES-PER-GALLON in DEFUN
+
+MILES-PER-GALLON
+*  FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable FINAL-ODOMETER-READING is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV FINAL-ODOMETER-READING #<NULL-LEXENV>)
+0] 0
+
+* (defun miles-per-gallon (initial-odometer-reading final-odometer-reading gallons-consumed)
+  (/ (- final-odometer-reading initial-odometer-reading)
+     gallons-consumed))
+WARNING: redefining COMMON-LISP-USER::MILES-PER-GALLON in DEFUN
+
+MILES-PER-GALLON
+* (miles-per-gallon 10 20 5)
+
+2
+* (third ‘(the quick brown fox))
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘ is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ‘ #<NULL-LEXENV>)
+0] 0
+
+* (third (the quick brown fox))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] 0
+
+* (third (‘the ‘quick ‘brown ‘fox))
+; in: THIRD (‘THE ‘QUICK ‘BROWN ‘FOX)
+;     (‘THE ‘QUICK ‘BROWN ‘FOX)
+; 
+; caught WARNING:
+;   undefined variable: ‘BROWN
+; 
+; caught WARNING:
+;   undefined variable: ‘FOX
+; 
+; caught WARNING:
+;   undefined variable: ‘QUICK
+; 
+; caught STYLE-WARNING:
+;   undefined function: ‘THE
+; 
+; compilation unit finished
+;   Undefined function:
+;     ‘THE
+;   Undefined variables:
+;     ‘BROWN ‘FOX ‘QUICK
+;   caught 3 WARNING conditions
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘QUICK is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (‘THE ‘QUICK ‘BROWN ‘FOX)
+0] 0
+
+* (third (‘the quick brown fox))
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable QUICK is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV QUICK #<NULL-LEXENV>)
+0] 0
+
+* (third ‘(the quick brown fox))
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘ is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ‘ #<NULL-LEXENV>)
+0] 0
+
+* (list ‘2 ‘and ‘2 ‘is ‘4)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘2 is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ‘2 #<NULL-LEXENV>)
+0] 0
+
+* (list 2 ‘and‘2 ‘is 4)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘AND‘2 is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ‘AND‘2 #<NULL-LEXENV>)
+0] 0
+
+* (list 2 ‘and‘2 ‘is 4)^[[B              2 is 4    'is 4)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable ‘AND is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV ‘AND #<NULL-LEXENV>)
+0] 0
+
+* (third '(the quick brown fox))
+
+BROWN
+* list    (list 2 'and 2 '  is 4)
+
+(2 AND 2 IS 4)
+* cons    (cons 'patrick '(seymour marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* cons '  pati rick  (              (cons 'patrick  (list 'seymour 'marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* exit
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable EXIT is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV EXIT #<NULL-LEXENV>)
+0] -e
+; in:
+;     (PROGN -E)
+; 
+; caught WARNING:
+;   undefined variable: -E
+; 
+; compilation unit finished
+;   Undefined variable:
+;     -E
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable -E is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G391)) #<unused argument>)
+   source: (PROGN -E)
+0[2] e --e
+; in:
+;     (PROGN --E)
+; 
+; caught WARNING:
+;   undefined variable: --E
+; 
+; compilation unit finished
+;   Undefined variable:
+;     --E
+;   caught 1 WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable --E is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G392)) #<unused argument>)
+   source: (PROGN --E)
+0[3] 
+0[2] 
+0] 
+* [0;32m@Lightister [0m➜ [1;34m/workspaces/csci-330-homeworks-Lightister [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-06 05:35:20+00:00 [COMMAND_EXIT_CODE="0"]
